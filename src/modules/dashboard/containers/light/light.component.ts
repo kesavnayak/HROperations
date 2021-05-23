@@ -45,7 +45,7 @@ this.clientId=u.clientId;
   }
 
   open(content: any) {
-      debugger;
+      
       this.edoj=JSON.stringify(this.edoj);
       this.edoj=JSON.parse(this.edoj);
 
