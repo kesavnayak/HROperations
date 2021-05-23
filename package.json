@@ -17,7 +17,7 @@
         "lint": "npm run ng -- lint",
         "ng": "cross-env NODE_OPTIONS=--max_old_space_size=2048 ./node_modules/.bin/ng",
         "serve": "./node_modules/.bin/static-server dist/sb-admin-angular",
-        "start": "ng serve",
+        "start": "npm run ng -- serve",
         "test": "npm run ng -- test"
     },
     "private": true,
