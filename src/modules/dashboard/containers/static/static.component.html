@@ -1,8 +1,182 @@
-<sb-layout-dashboard [static]="true"
-    ><sb-dashboard-head title="Dashboard Static" [hideBreadcrumbs]="false"></sb-dashboard-head><sb-dashboard-cards></sb-dashboard-cards><sb-dashboard-charts></sb-dashboard-charts><sb-dashboard-tables></sb-dashboard-tables
-    ><sb-card
-        ><div class="card-header"><fa-icon class="mr-1" [icon]='["fas", "chart-pie"]'></fa-icon>Pie Chart Example</div>
-        <div class="card-body"><sb-charts-pie></sb-charts-pie></div>
-        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div></sb-card
-    ></sb-layout-dashboard
->
+<sb-dashboard-head title="Credentials" [hideBreadcrumbs]="false"></sb-dashboard-head>
+
+    <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-8 offset-md-2">
+            <div class="card">
+              <div class="card-body">
+                <form [formGroup]="registrationForm" class="mx-auto">
+                  <div class="form-group">
+                    <label for="email">To Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="example@mail.com"
+                      formControlName="toemail"
+                      [(ngModel)]="toemail"
+
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="email">CC Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="example@mail.com"
+                      formControlName="ccemail"
+                      [(ngModel)]="ccemail"
+
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Infogram Username</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      formControlName="username"
+                      [(ngModel)]="username"
+
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Employee Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      formControlName="ename"
+                      [(ngModel)]="ename"
+
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Employee Code</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      formControlName="ecode"
+                      [(ngModel)]="ecode"
+
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Employee Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="example@mail.com"
+                      formControlName="eemail"
+                      [(ngModel)]="eemail"
+
+                    />
+                  </div>
+
+                  <div class="btn-toolbar">
+                    <button  [disabled]="!registrationForm.valid" class="btn btn-primary" style="margin-right: 20px" (click)="open(content)">Preview</button>
+                    <button  [disabled]="!registrationForm.valid" (click)="send()" class="btn btn-primary">Compose
+                    </button>
+                  </div>
+
+
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Email Preview</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <form>
+
+              <div class="form-group">
+                <label for="email">To Email</label>
+                <input
+                  type="email"
+                  readonly
+                  class="form-control"
+                  value="{{toemail}}"
+
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">CC Email</label>
+                <input
+                  type="email"
+                  readonly
+                  class="form-control"
+                  value="{{ccemail}}"
+
+                />
+              </div>
+            <input type="text" readonly class="form-control" placeholder="Subject" style="width:95%;" value="Credentials | Aaseya Employment Details"><br />
+            <div class="form-control" style="height: 550px;">
+<p>Dear {{ename}},</p>
+
+
+<p>Please find the below Aaseya employment details which include employee code and Aaseya Email id</p>
+
+<p>Password will be shared to you by IT team.</p>
+
+<table class="table table-bordered">
+    <thead class="bg-primary">
+      <tr>
+        <th scope="col">Employee Code</th>
+        <th scope="col">Employee Name</th>
+        <th scope="col">Employee Email Id</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ecode}}</td>
+        <td>{{ename}}</td>
+        <td>{{eemail}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+<p>We recommend you to change your password to avoid any discrepancy and align to the security measures,</p>
+
+<p><strong>Infogram Credentials:</strong></p>
+
+<table class="table table-bordered">
+    <thead class="bg-secondary">
+      <tr>
+        <th scope="col">Login</th>
+        <th scope="col">Company Id</th>
+        <th scope="col">Username</th>
+        <th scope="col">Password</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href='https://axdipfll3.accounts.ondemand.com/saml2/idp/sso?sp=https://www.successfactors.com/yashtechnoP&idp=axdipfll3.accounts.ondemand.com'>Link</a></td>
+        <td>yashtechnoP</td>
+        <td>{{username}}</td>
+        <td>Rest the Password</td>
+      </tr>
+    </tbody>
+  </table>
+<br/>
+
+  <strong>
+  Regards,<br/>
+  Monalisa Nayak<br/>
+  Team HR<br/>
+</strong>
+
+
+</div>
+        </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+    </div>
+  </ng-template>

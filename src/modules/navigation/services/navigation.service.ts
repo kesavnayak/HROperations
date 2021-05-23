@@ -7,7 +7,7 @@ import { SBRouteData } from '../models';
 
 @Injectable()
 export class NavigationService {
-    _sideNavVisible$ = new BehaviorSubject(true);
+    _sideNavVisible$ = new BehaviorSubject(false);
     _routeData$ = new BehaviorSubject({} as SBRouteData);
     _currentURL$ = new BehaviorSubject('');
 

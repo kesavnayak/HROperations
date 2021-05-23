@@ -7,11 +7,11 @@ export const sideNavSections: SideNavSection[] = [
     },
     {
         text: 'INTERFACE',
-        items: ['layouts', 'pages'],
+        items: ['OnBoarding', 'OffBoarding'],
     },
     {
-        text: 'ADDONS',
-        items: ['charts', 'tables'],
+        text: 'Reports',
+        items: ['OnBoardingReport', 'OffBoardingReport'],
     },
 ];
 
@@ -21,68 +21,89 @@ export const sideNavItems: SideNavItems = {
         text: 'Dashboard',
         link: '/dashboard',
     },
-    layouts: {
-        icon: 'columns',
-        text: 'Layouts',
+
+    OnBoarding: {
+        icon: 'book-open',
+        text: 'OnBoarding',
         submenu: [
             {
-                text: 'Static Navigation',
+                text: 'Full Time Employee',
+                submenu: [
+                    {
+                        text: 'Credentials',
+                        link: '/dashboard/static',
+                    },
+                    {
+                        text: 'Introduction To IRM',
+                        link: '/dashboard/light',
+                    },
+                    {
+                        text: 'Bank Details',
+                        link: '/dashboard/static',
+                    },
+                    {
+                        text: 'Welcome Aboard',
+                        link: '/dashboard/static',
+                    },
+                    {
+                        text: 'PDN',
+                        link: '/dashboard/static',
+                    },
+                    {
+                        text: 'Resume',
+                        link: '/dashboard/static',
+                    },
+                    {
+                        text: 'Onboarded Email',
+                        link: '/dashboard/static',
+                    },
+                    {
+                        text: 'Declaration',
+                        link: '/dashboard/static',
+                    },
+                    {
+                        text: 'Welcome To Aaseya',
+                        link: '/dashboard/static',
+                    },
+                ],
+            },
+            {
+                text: 'Contract Employee',
+                submenu: [
+                    {
+                        text: 'Credentials',
+                        link: '/dashboard/static',
+                    },
+                    {
+                        text: 'Onboarded Details',
+                        link: '/dashboard/static',
+                    },
+                ],
+            },
+        ],
+    },
+    OffBoarding: {
+        icon: 'columns',
+        text: 'OffBoarding',
+        submenu: [
+            {
+                text: 'Last Working Day',
                 link: '/dashboard/static',
             },
             {
-                text: 'Light Sidenav',
+                text: 'No Dues',
                 link: '/dashboard/light',
             },
         ],
     },
-    pages: {
-        icon: 'book-open',
-        text: 'Pages',
-        submenu: [
-            {
-                text: 'Authentication',
-                submenu: [
-                    {
-                        text: 'Login',
-                        link: '/auth/login',
-                    },
-                    {
-                        text: 'Register',
-                        link: '/auth/register',
-                    },
-                    {
-                        text: 'Forgot Password',
-                        link: '/auth/forgot-password',
-                    },
-                ],
-            },
-            {
-                text: 'Error',
-                submenu: [
-                    {
-                        text: '401 Page',
-                        link: '/error/401',
-                    },
-                    {
-                        text: '404 Page',
-                        link: '/error/404',
-                    },
-                    {
-                        text: '500 Page',
-                        link: '/error/500',
-                    },
-                ],
-            },
-        ],
-    },
-    charts: {
+    OnBoardingReport: {
         icon: 'chart-area',
-        text: 'Charts',
+        text: 'OnBoarding Report',
         link: '/charts',
     },
-    tables: {
+    OffBoardingReport: {
         icon: 'table',
-        text: 'Tables',
+        text: 'OffBoarding Report',
         link: '/tables',
     },
 };

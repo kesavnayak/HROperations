@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { MsalService } from '@azure/msal-angular';
 import { UserService } from '@modules/auth/services';
 
 @Component({
@@ -8,6 +9,18 @@ import { UserService } from '@modules/auth/services';
     styleUrls: ['top-nav-user.component.scss'],
 })
 export class TopNavUserComponent implements OnInit {
+    isLoggedIn:boolean=false;
     constructor(public userService: UserService) {}
-    ngOnInit() {}
+    ngOnInit() {
+
+    }
+
+    login(){
+        this.userService.login();
+    }
+
+    logout(){
+        this.userService.logout();
+    }
+
 }

@@ -19,3 +19,16 @@
 @import "navigation/sidenav/sidenav.scss";
 @import "navigation/sidenav/sidenav-dark.scss";
 @import "navigation/sidenav/sidenav-light.scss";
+
+
+.modal-content{
+    top:40px !important;
+}
+
+@media (min-width: 576px){
+.modal-dialog {
+    max-width: 1150px !important;
+    margin: 1.75rem auto !important;
+    margin-right: 20px !important;
+}
+}

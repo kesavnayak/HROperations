@@ -24,7 +24,7 @@ export class LayoutDashboardComponent implements OnInit, OnDestroy {
     subscription: Subscription = new Subscription();
     sideNavItems = sideNavItems;
     sideNavSections = sideNavSections;
-    sidenavStyle = 'sb-sidenav-dark';
+    sidenavStyle = 'sb-sidenav-light';
 
     constructor(
         public navigationService: NavigationService,
